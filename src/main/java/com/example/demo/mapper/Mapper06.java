@@ -17,8 +17,13 @@ public interface Mapper06 {
 				Address  
 			FROM Customers
 			ORDER BY CustomerId DESC
-			Limit #{startIndex}, 20
+			Limit #{startIndex}, #{num}
 			""")
-	List<Customer> listCustomer(Integer startIndex);
+	List<Customer> listCustomer(Integer startIndex, Integer num);
+
+	@Select("""
+			SELECT COUNT(*) FROM Customers
+			""")
+	Integer size();
 
 }
