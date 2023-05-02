@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.Mapper11">
+
+	<resultMap type="com.example.demo.domain.Category" id="categoryResult">
+		<id column="categoryId" property="id"/>
+		<result column="categoryName" property="name"/>
+		<result column="description" property="description"/>
+		<collection property="products" ofType="String" >
+			 <result column="productName"></result>
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.example.demo.domain.Category" id="categoryResultMap">
+		<id column="CategoryId" property="id"/>
+		<result column="CategoryName" property="name"/>
+		<result column="Description" property="description"/>
+		<collection property="products" ofType="com.example.demo.domain.Product">
+			<result column="ProductName" property="name"/>
+			<result column="Price" property="price"/>
+		</collection>
+	</resultMap>
+	
+	<resultMap type="com.example.demo.domain.Supplier" id="supplierResult">
+		<id column="SupplierId" property="id"/>
+		<result column="SupplierName" property="name"/>
+		<result column="ContactName" property="contactName"/>
+		<result column="Address" property="address"/>
+		<result column="City" property="city"/>
+		<result column="PostalCode" property="postalCode"/>
+		<result column="Country" property="country"/>
+		<result column="Phone" property="phone"/>
+		<collection property="products" ofType="com.example.demo.domain.Product">
+			<result column="ProductName" property="name"/>
+			<result column="Price" property="price"/>
+		</collection>
+	</resultMap>
+	
+	
+		
+
+</mapper>
