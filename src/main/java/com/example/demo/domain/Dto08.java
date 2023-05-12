@@ -5,5 +5,5 @@ import lombok.*;
 @Data
 public class Dto08 {
 	private String productName;
-	private Integer price;
+	private Double price;
 }
